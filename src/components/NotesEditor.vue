@@ -26,8 +26,8 @@
 		name: 'notes-editor',
 		data: () => ({
 			text: '',
-			bgColorDefault:'#000000',
-			bgColor: '#ffffff' ,
+			bgColorDefault:'#44c767',
+			bgColor: '#44c767' ,
 			isEditing: null,
 		}),
 
@@ -135,20 +135,20 @@
 
 	.cancel-button {
 		width: 100px;
-		background-color: #44c767;
+		background-color: #d82f2f;
 		border-radius: 8px;
-		border: 1px solid #18ab29;
+		border: 1px solid #ff0001;
 		cursor: pointer;
 		color: #ffffff;
 		font-size: 14px;
 		padding: 8px 8px;
 		text-transform: uppercase;
 		text-decoration: none;
-		text-shadow: 0px 1px 0px #2f6627;
+		text-shadow: 0px 1px 0px #662727;
 	}
 
 	.cancel-button:hover {
-		background-color: #5cbf2a;
+		background-color: #f70000;
 	}
 
 	.cancel-button:active {
