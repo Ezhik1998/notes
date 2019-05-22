@@ -21,7 +21,7 @@
 		padding-top: 10px;
 		text-align: center;
 		font-weight: 500;
-		color: #44c767;
+		color: #5aa86f;
 		text-shadow: 0 2px 3px rgba(255, 255, 255, 0.5);
 	}
 </style>
