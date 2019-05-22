@@ -2,7 +2,7 @@
 	<div>
 		<div class="note" :style="{ backgroundColor: note.bgcolor }">		
 			<div class="edit-delete">
-				<div class="edit-note"  @click="editing" >
+				<div class="edit-note"  @click="$emit('editNote', note)" >
 					<i class="material-icons">edit</i>	
 				</div>		
 				<div class="delete-note" @click="$emit('deleteNote', note.id)">
@@ -24,12 +24,6 @@
 				type: Object,
 				required: true,
 			},
-		},	
-		methods: {
-			editing(note) {
-				this.$emit("editNote", this.note);
-				// console.log("Edit in Item");
-   		},
 		}
 };
 </script>
@@ -54,7 +48,7 @@
 
 	.edit-delete{		
 		display: flex;
-  	justify-content: flex-end;		  
+  		justify-content: flex-end;		  
 	}
 	.delete-note {
 		top: 5px;

@@ -4,8 +4,8 @@
             v-for="note in notes"
             :key="note.id"
             :note="note"
-			@deleteNote="removeNoteHandler"
-        	@editNote="editNoteHandler"
+			@deleteNote="$emit('deleteNote', note.id)"
+        	@editNote="$emit('editNote', note)"
         />
     </div>
 </template>
@@ -24,15 +24,7 @@ export default {
             type: Array,
             required: true
         }
-	},
-	 methods: {
-		removeNoteHandler(noteId) {
-		this.$emit("deleteNote", noteId);
-		},
-		editNoteHandler(note) {
-		this.$emit("editNote", note);
-		}
-	},
+	},	
     mounted() {
         const grid = this.$refs.grid
         this.msnry = new Masonry(grid, {

@@ -1,12 +1,13 @@
 <template>
 	<div class="notes-app">
 		<notes-header :title="title" />
-		<notes-editor @createNote="createNoteHandler" @saveChanges="saveNote" ref="edit"/>
+		<notes-editor @createNote="createNoteHandler" @saveChanges="saveNoteChanges" ref="edit"/>
 		<notes-grid :notes="notes"  @deleteNote="deleteNoteHandler" @editNote="editNoteHandler" />
 	</div>
 </template>
 
 <script>
+
 	import NotesHeader from '@/components/NotesHeader.vue';
 	import NotesEditor from '@/components/NotesEditor.vue';
 	import NotesGrid from '@/components/NotesGrid.vue';
@@ -32,7 +33,7 @@
       			localStorage.notes = JSON.stringify(notes)  				
 				// console.log("Push new note in App");				
 			},
-			saveNote(note) {
+			saveNoteChanges(note) {
 				this.notes = this.notes.map((item) => item.id === note.id ? note : item);
 				localStorage.notes = JSON.stringify(this.notes);
 				// console.log("Save edit note in App");
