@@ -1,7 +1,7 @@
 <template>
     <div class="notes-grid" ref="grid">
         <NoteItem
-            v-for="note in notes"
+            v-for="note in notes"            
             :key="note.id"
             :note="note"
 			@deleteNote="$emit('deleteNote', note.id)"

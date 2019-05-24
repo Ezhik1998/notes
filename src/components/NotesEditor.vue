@@ -48,19 +48,17 @@
 				}
 			},
 			setEdit(note) {
-				if (this.isEditing) {
-					return;
-				}
 				this.bgColor = note.bgcolor;
 				this.isEditing = note;
 				this.text = note.text;
 			},
-			editNote(){
+			editNote(){				
 				const note = {
 					...this.isEditing,
 					text: this.text,
 					bgcolor: this.bgColor
 				};
+				
 				this.$emit("saveChanges", note);
 				this.isEditing = null;
 				this.text = "";
